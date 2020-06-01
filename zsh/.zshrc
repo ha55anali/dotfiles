@@ -18,6 +18,8 @@ _comp_options+=(globdots)		# Include hidden files.
 
 # vi mode
 bindkey -v
+bindkey '^R' history-incremental-search-backward
+bindkey '^T' history-incremental-search-forward
 export KEYTIMEOUT=1
 
 # Use vim keys in tab complete menu:
