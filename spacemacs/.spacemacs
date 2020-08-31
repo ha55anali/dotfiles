@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     python
      sql
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -329,6 +330,8 @@ you should place your code here."
   ;;enable relative line numbers
   (linum-relative-toggle)
 
+  (setq org-agenda-files (directory-files-recursively "~/Documents/" "\\.org$"))
+
   ;; (add-hook 'c++-mode-hook 'clang-format-bindings)
   ;; (defun clang-format-bindings ()
   ;;   (define-key c++-mode-map [C-tab] 'clang-format-region))
@@ -350,9 +353,13 @@ you should place your code here."
  '(custom-safe-themes
    (quote
     ("aded61687237d1dff6325edb492bde536f40b048eab7246c61d5c6643c696b7f" default)))
+ '(evil-want-Y-yank-to-eol nil)
+ '(org-agenda-files
+   (quote
+    ("/home/hassan/Documents/Code/AlgoA2/planning.org" "/home/hassan/Documents/Code/OS/asn/solution.org" "/home/hassan/Documents/Code/OS/asn2/solution.org" "/home/hassan/Documents/Code/OS/asn2/solution_disk.org" "/home/hassan/Documents/Code/SQL2/Solution.org" "/home/hassan/Documents/Code/SimpleShell/readme.org" "/home/hassan/Documents/Code/TimeTableFixxer/SmorTable/planning.org" "/home/hassan/Documents/OrgDocs/docs/missingSem/potpurri.org" "/home/hassan/Documents/OrgDocs/docs/missingSem/security.org" "/home/hassan/Documents/OrgDocs/docs/dairy.org" "/home/hassan/Documents/OrgDocs/docs/polMaskUS.org" "/home/hassan/Documents/OrgDocs/docs/predictionsWisecrack.org" "/home/hassan/Documents/OrgDocs/docs/reviewAugust.org" "/home/hassan/Documents/OrgDocs/docs/semPlan.org" "/home/hassan/Documents/test.org")))
  '(package-selected-packages
    (quote
-    (gruvbox-theme autothemer realgud-pry realgud test-simple loc-changes load-relative org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot sql-indent disaster company-c-headers cmake-mode clang-format smeargle orgit magit-gitflow magit-popup helm-gitignore helm-company helm-c-yasnippet gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit git-commit with-editor transient company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+    (yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode company-anaconda anaconda-mode pythonic gruvbox-theme autothemer realgud-pry realgud test-simple loc-changes load-relative org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot sql-indent disaster company-c-headers cmake-mode clang-format smeargle orgit magit-gitflow magit-popup helm-gitignore helm-company helm-c-yasnippet gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit git-commit with-editor transient company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
