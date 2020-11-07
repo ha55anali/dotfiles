@@ -333,6 +333,9 @@ you should place your code here."
 
   (setq org-agenda-files (directory-files-recursively "~/Documents/" "\\.org$"))
 
+  (setq company-dabbrev-downcase 0)
+  (setq company-idle-delay 0)
+
   ;; (add-hook 'c++-mode-hook 'clang-format-bindings)
   ;; (defun clang-format-bindings ()
   ;;   (define-key c++-mode-map [C-tab] 'clang-format-region))
