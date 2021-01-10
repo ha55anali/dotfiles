@@ -218,3 +218,8 @@ client.background       #2e3440
 gaps inner 8
 gaps outer 0
 for_window [class=".*"] border pixel 2
+
+bindsym $mod+c exec chromium
+bindsym $mod+Shift+f exec firefox
+
+for_window [class="Zotero" instance="."] floating enable
