@@ -238,3 +238,6 @@ bindsym $mod+c exec chromium
 bindsym $mod+Shift+f exec firefox
 
 for_window [class="Zotero" instance="."] floating enable
+
+#set wallpaper
+exec nitrogen --restore
