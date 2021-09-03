@@ -77,3 +77,5 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 export PATH=/home/hassan/Documents/Scripts:$PATH
 setxkbmap -option caps:swapescape
+export PROMPT_COMMAND="history -a; history -n"
+
