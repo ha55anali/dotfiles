@@ -142,6 +142,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 bindsym $mod+Control+Right move workspace to output right
 bindsym $mod+Control+Left move workspace to output left
+bindsym $mod+Control+Down move workspace to output down
+bindsym $mod+Control+Up move workspace to output up
 
 workspace 1 output primary
 workspace 2 output primary
@@ -230,12 +232,15 @@ client.unfocused        #333333 #3c3836 #d8dee9 #292d2e   #2a2a2a
 #
 client.background       #2e3440
 
-gaps inner 8
-gaps outer 0
-for_window [class=".*"] border pixel 2
+#gaps inner 10
+#gaps outer 0
+#for_window [class=".*"] border pixel 2
 
 bindsym $mod+c exec chromium
 bindsym $mod+Shift+f exec firefox
+bindsym $mod+Shift+D exec xfce4-display-settings -m
+bindsym $mod+Shift+q exec xfce4-session-logout
+bindsym $mod+Shift+o exec "sleep 1 && xset dpms force off"
 
 for_window [class="Zotero" instance="."] floating enable
 
