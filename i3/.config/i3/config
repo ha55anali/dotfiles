@@ -41,7 +41,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+q kill
@@ -236,7 +236,7 @@ client.background       #2e3440
 #gaps outer 0
 #for_window [class=".*"] border pixel 2
 
-bindsym $mod+c exec chromium
+bindsym $mod+c exec chromium-browser
 bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+D exec xfce4-display-settings -m
 bindsym $mod+Shift+q exec xfce4-session-logout
@@ -246,3 +246,9 @@ for_window [class="Zotero" instance="."] floating enable
 
 #set wallpaper
 exec nitrogen --restore
+
+# change brightness
+bindcode 232 exec brightlight -d 100
+bindcode 233 exec brightlight -i 100
+
+bindcode 235 exec ~/.screenlayout/laptop.sh
