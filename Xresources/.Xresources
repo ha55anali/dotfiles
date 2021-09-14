@@ -47,4 +47,4 @@ URxvt.iso14755_52: false
 
 
 URxvt.font:  xft:Mono:pixelsize=14
-
+urxvt.perl-ext-common: default,resize-font
