@@ -10,6 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $mod1 Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -236,7 +237,8 @@ client.background       #2e3440
 #gaps outer 0
 #for_window [class=".*"] border pixel 2
 
-bindsym $mod+c exec chromium-browser
+bindsym $mod+c exec chromium-browser --profile-directory="Default"
+bindsym $mod+$mod1+c exec chromium-browser --profile-directory="Profile 3"
 bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+D exec clipmenu
 bindsym $mod+Shift+q exec xfce4-session-logout
@@ -253,6 +255,8 @@ bindcode 233 exec brightlight -i 100
 
 bindcode 179 exec ~/.screenlayout/laptop.sh
 bindcode 152 exec i3lock -c 000000 && systemctl suspend
+set $shift 50
+bindcode shift+152 exec sleep 0.5 && xset dpms force off
 
 #set wallpaper using azote
 exec ~/.fehbg
@@ -289,4 +293,5 @@ set $volumestep 5
 # Using pulseaudio-utils (append "-s $sinkname" without quotes to override default sink)
 bindsym XF86AudioRaiseVolume exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig up $volumestep
 bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig down $volumestep
-bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig mute
+bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig mute &&  echo $(((1- $(cat /sys/class/leds/platform::mute/brightness)))) | sudo tee  /sys/class/leds/platform::mute/brightness
+bindsym XF86AudioMicMute        exec --no-startup-id pactl set-source-mute echocancel toggle && notify-send mute-mic && echo $(((1- $(cat /sys/class/leds/platform::micmute/brightness)))) | sudo tee  /sys/class/leds/platform::micmute/brightness
